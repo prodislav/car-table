@@ -1,0 +1,21 @@
+.table-item {
+    display: flex;
+    justify-content: space-around;
+  
+}
+
+.table-item:not(:last-child){
+    border-bottom: 1px solid lightgrey;
+}
+
+.table-item__name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px;
+    width: 16%;
+}
+
+.table-item__name:not(:last-child) {
+    border-right: 1px solid lightgrey;
+}
