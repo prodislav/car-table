@@ -1,4 +1,4 @@
-import { DATA_REQUEST, DATA_SUCCESS, DATA_FAIL, ADD_CAR, DELETE_CAR } from './constants.js';
+import { DATA_REQUEST, DATA_SUCCESS, DATA_FAIL, ADD_CAR, DELETE_CAR, FILTER_CAR } from './constants.js';
 
 export const dataRequest = () => { 
   return {
@@ -34,5 +34,9 @@ export const deleteCar = (data) => {
   };
 }
 
-
-
+  export const filterCarByPrice = (data) => {
+    return {
+      type: FILTER_CAR,
+      payload: data,
+    };
+  }

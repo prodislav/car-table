@@ -1,6 +1,7 @@
 import React, { useEffect, useCallback } from 'react';
 import TableItem from '../table-item/component';
-import { dataRequest, deleteCar } from '../../store/actions';
+import Sort from '../../controls/sort-field/component';
+import { dataRequest, deleteCar } from '../../../store/actions';
 import { useSelector, useDispatch } from 'react-redux';
 
 import './style.css';
@@ -50,25 +51,7 @@ function TableWrapper(props) {
       <button className="button add-item" onClick={props.onOpen}>
         Add
       </button>
-      <div className="sort-wrapper">
-        <div className="sort">
-          <div className="sort-by-year">
-            <p>Сортировать по году выпуска:</p>
-            <select>
-              <option>Сначала новые</option>
-              <option>Сначала старые</option>
-            </select>
-          </div>
-          <div className="sort-by-prise">
-            <p>Сортировать по цене:</p>
-            <select>
-              <option>Сначала дорогие</option>
-              <option>Сначала дешевые</option>
-            </select>
-          </div>
-        </div>
-        <div className="filter">rgerg</div>
-      </div>
+      <Sort />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import TableWrapper from './components/table-wrapper/component';
-import Modal from './components/modal/component';
+import TableWrapper from './components/blocks/table-wrapper/component';
+import Modal from './components/blocks/modal/component';
 import { useSelector, useDispatch } from 'react-redux';
 import { addCar } from './store/actions';
 
