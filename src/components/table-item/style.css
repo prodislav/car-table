@@ -1,7 +1,7 @@
 .table-item {
+    position: relative;
     display: flex;
     justify-content: space-around;
-  
 }
 
 .table-item:not(:last-child){
@@ -18,4 +18,33 @@
 
 .table-item__name:not(:last-child) {
     border-right: 1px solid lightgrey;
+}
+
+.btn-del {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    right: 3px;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    outline: none;
+    transition: all .2s;
+}
+
+.btn-del:hover {
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    outline: none;
+    transition: all .2s;
+}
+
+.btn-del:active {
+    outline: none;
+    transition: all .2s;
 }

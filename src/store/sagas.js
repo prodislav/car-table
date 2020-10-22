@@ -1,8 +1,7 @@
 import { DATA_REQUEST } from './constants.js';
-
 import { dataSuccess, dataFail } from './actions';
 import { put, call, takeEvery } from 'redux-saga/effects';
-import dataAboutCars from '../../data';
+import dataAboutCars from '../data';
 
 function* fetchDataAsync() {
   try {

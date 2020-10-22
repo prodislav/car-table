@@ -1,14 +1,19 @@
 .table-wrapper {
     width: 100%;
     height: auto;
-    border: 1px solid lightgrey;
-    border-radius: 2px;
+    margin-top: 40px;
+}
+
+.table-content {
+   border: 1px solid lightgrey;
 }
 
 .table-head {
     display: flex;
     justify-content: space-around;
-    border-bottom: 1px solid lightgrey;
+    border: 1px solid lightgrey;
+    border-bottom: none;
+    width: 100%
 }
 
 .table-head__name {
@@ -28,3 +33,34 @@
 .table-content {
     width: 100%;
 }
+
+.button {
+    display: block;
+    margin: 40px auto;
+    width: 100px;
+    height: 40px;
+    background-color: rgb(126, 212, 198);
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    box-shadow: 2px 2px lightgray;
+    outline: none;
+    transition: all .3s;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: rgb(121, 201, 187);
+    box-shadow: 3px 3px rgb(196, 195, 195);
+    outline: none;
+    transition: all .3s;
+}
+
+.button:active {
+    outline: none;
+    box-shadow: none;
+    transition: all .3s;
+}
+

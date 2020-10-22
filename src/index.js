@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import dataReducer from './components/table-wrapper/reducer';
-import { getDataAboutCars } from './components/table-wrapper/sagas';
+import dataReducer from './store/reducer';
+import { getDataAboutCars } from './store/sagas';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';

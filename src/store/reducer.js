@@ -1,4 +1,4 @@
-import { DATA_REQUEST, DATA_SUCCESS, DATA_FAIL } from './constants.js';
+import { DATA_REQUEST, DATA_SUCCESS, DATA_FAIL, ADD_CAR, DELETE_CAR } from './constants.js';
 
 const initialState = {
   isLoading: false,
@@ -25,6 +25,18 @@ function dataReducer(state = initialState, { type, payload }) {
         ...state,
         error: payload,
         isLoading: false,
+      };
+
+    case ADD_CAR:
+      return {
+        ...state,
+        carsData: [...payload],
+      };
+
+    case DELETE_CAR:
+      return {
+        ...state,
+        carsData: [...payload],
       };
 
     default:
