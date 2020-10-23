@@ -1,46 +1,81 @@
-import React, {  useRef } from 'react';
+import React, { useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Select } from 'antd';
-import { filterCarByPrice } from '../../../store/actions';
+import { filterCarByPrice, sortCarByYear, sortCarByPrice } from '../../../store/actions';
 import 'antd/dist/antd.css';
 
 import './style.css';
 
 function Sort() {
-
   const inputMinPrice = useRef(null);
   const inputMaxPrice = useRef(null);
 
-  const data = useSelector(state => state.carsData)
+  const data = useSelector((state) => state.carsData);
   const dispatch = useDispatch();
-  
+
   const { Option } = Select;
-  
+
   function handleChangeYear(value) {
-    console.log(`selected ${value}`);
+    const newData = [...data];
+    if(value === 'old') {
+      newData.sort((a,b) => {
+        return a.year > b.year ? 1 : -1;
+      })
+    }
+    if(value === 'new') {
+      newData.sort((a,b) => {
+        return a.year < b.year ? 1 : -1;
+      })
+    }
+    dispatch(sortCarByYear(newData))
   }
-  
+
   function handleChangePrice(value) {
-    console.log(`selected ${value}`);
+    const newData = [...data];
+    if(value === 'cheap') {
+      newData.sort((a,b) => {
+        return a.year < b.year ? 1 : -1;
+      })
+    }
+    if(value === 'expensive') {
+      newData.sort((a,b) => {
+        return a.price > b.price ? 1 : -1;
+      })
+    }
+    dispatch(sortCarByPrice(newData))
   }
-  
 
   const handleCleanInputMinOnFocus = () => {
     inputMinPrice.current.value = '';
-  }
+  };
 
   const handleCleanInputMaxOnFocus = () => {
     inputMaxPrice.current.value = '';
-  }
+  };
+
+  const handleBlurInputMin = () => {
+    return !inputMinPrice.current.value
+      ? (inputMinPrice.current.value = '0')
+      : inputMinPrice.current.value;
+  };
+
+  const handleBlurInputMax = () => {
+    return !inputMaxPrice.current.value
+      ? (inputMaxPrice.current.value = '0')
+      : inputMaxPrice.current.value;
+  };
 
   const handleFilter = (e) => {
     e.preventDefault();
     const newData = [];
     data.map((item) => {
-      return item.price >= inputMinPrice.current.value && item.price <= inputMaxPrice.current.value ? newData.push(item) : newData;
-    })
+      return item.price >= inputMinPrice.current.value &&
+        item.price <= inputMaxPrice.current.value
+        ? newData.push(item)
+        : newData;
+    });
     dispatch(filterCarByPrice(newData));
-  }
+  };
 
   return (
     <div className="sort-wrapper">
@@ -69,13 +104,27 @@ function Sort() {
       <form className="filter" onSubmit={handleFilter}>
         <div className="price-from">
           <p>Цена от:</p>
-          <input type="number" defaultValue='0' ref={inputMinPrice} onFocus={handleCleanInputMinOnFocus} ></input>
+          <input
+            type="number"
+            defaultValue="0"
+            ref={inputMinPrice}
+            onFocus={handleCleanInputMinOnFocus}
+            onBlur={handleBlurInputMin}
+          ></input>
         </div>
         <div className="price-to">
           <p>Цена до:</p>
-          <input type="number" defaultValue='0' ref={inputMaxPrice} onFocus={handleCleanInputMaxOnFocus}  ></input>
+          <input
+            type="number"
+            defaultValue="0"
+            ref={inputMaxPrice}
+            onFocus={handleCleanInputMaxOnFocus}
+            onBlur={handleBlurInputMax}
+          ></input>
         </div>
-        <button className="button btn-filter" type='submit' >Show</button>
+        <button className="button btn-filter" type="submit">
+          Show
+        </button>
       </form>
     </div>
   );

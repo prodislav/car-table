@@ -5,6 +5,8 @@ import {
   ADD_CAR,
   DELETE_CAR,
   FILTER_CAR,
+  SORT_CAR_BY_YEAR,
+  SORT_CAR_BY_PRICE,
 } from './constants.js';
 
 const initialState = {
@@ -52,6 +54,19 @@ function dataReducer(state = initialState, { type, payload }) {
         carsData: [...payload],
       };
 
+      case SORT_CAR_BY_YEAR:
+      return {
+        ...state,
+        carsData: [...payload],
+      }; 
+    
+      case SORT_CAR_BY_PRICE:
+        return {
+          ...state,
+          carsData: [...payload],
+        }; 
+
+    
     default:
       return state;
   }

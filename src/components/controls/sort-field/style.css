@@ -16,5 +16,6 @@
 }
 
 .button.btn-filter {
-    margin: auto 0;
+    margin: 32px 0 0;
+    height: 30px;
 }

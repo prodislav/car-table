@@ -27,10 +27,10 @@ function App() {
         id: `${data.length}-${e.target.childNodes[5].value}`,
         brand: e.target.childNodes[0].value,
         model: e.target.childNodes[1].value,
-        year: e.target.childNodes[2].value,
+        year: Number(e.target.childNodes[2].value),
         country: e.target.childNodes[3].value,
         color: e.target.childNodes[4].value,
-        price: e.target.childNodes[5].value,
+        price: Number(e.target.childNodes[5].value),
       },
     ];
 
