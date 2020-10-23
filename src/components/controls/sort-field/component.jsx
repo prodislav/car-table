@@ -10,39 +10,31 @@ function Sort() {
   const inputMinPrice = useRef(null);
   const inputMaxPrice = useRef(null);
 
-  const data = useSelector((state) => state.carsData);
+  const data = useSelector(state => state.carsData);
   const dispatch = useDispatch();
 
   const { Option } = Select;
 
   function handleChangeYear(value) {
     const newData = [...data];
-    if(value === 'old') {
-      newData.sort((a,b) => {
-        return a.year > b.year ? 1 : -1;
-      })
+    if (value === 'old') {
+      newData.sort((a, b) => (a.year > b.year ? 1 : -1));
     }
-    if(value === 'new') {
-      newData.sort((a,b) => {
-        return a.year < b.year ? 1 : -1;
-      })
+    if (value === 'new') {
+      newData.sort((a, b) => (a.year < b.year ? 1 : -1));
     }
-    dispatch(sortCarByYear(newData))
+    dispatch(sortCarByYear(newData));
   }
 
   function handleChangePrice(value) {
     const newData = [...data];
-    if(value === 'cheap') {
-      newData.sort((a,b) => {
-        return a.year < b.year ? 1 : -1;
-      })
+    if (value === 'cheap') {
+      newData.sort((a, b) => (a.year < b.year ? 1 : -1));
     }
-    if(value === 'expensive') {
-      newData.sort((a,b) => {
-        return a.price > b.price ? 1 : -1;
-      })
+    if (value === 'expensive') {
+      newData.sort((a, b) => (a.price > b.price ? 1 : -1));
     }
-    dispatch(sortCarByPrice(newData))
+    dispatch(sortCarByPrice(newData));
   }
 
   const handleCleanInputMinOnFocus = () => {
@@ -53,27 +45,21 @@ function Sort() {
     inputMaxPrice.current.value = '';
   };
 
-  const handleBlurInputMin = () => {
-    return !inputMinPrice.current.value
-      ? (inputMinPrice.current.value = '0')
-      : inputMinPrice.current.value;
-  };
+  const handleBlurInputMin = () => (!inputMinPrice.current.value
+    ? (inputMinPrice.current.value = '0')
+    : inputMinPrice.current.value);
 
-  const handleBlurInputMax = () => {
-    return !inputMaxPrice.current.value
-      ? (inputMaxPrice.current.value = '0')
-      : inputMaxPrice.current.value;
-  };
+  const handleBlurInputMax = () => (!inputMaxPrice.current.value
+    ? (inputMaxPrice.current.value = '0')
+    : inputMaxPrice.current.value);
 
-  const handleFilter = (e) => {
+  const handleFilter = e => {
     e.preventDefault();
     const newData = [];
-    data.map((item) => {
-      return item.price >= inputMinPrice.current.value &&
-        item.price <= inputMaxPrice.current.value
-        ? newData.push(item)
-        : newData;
-    });
+    data.map(item => (item.price >= inputMinPrice.current.value
+        && item.price <= inputMaxPrice.current.value
+      ? newData.push(item)
+      : newData));
     dispatch(filterCarByPrice(newData));
   };
 
@@ -109,8 +95,7 @@ function Sort() {
             defaultValue="0"
             ref={inputMinPrice}
             onFocus={handleCleanInputMinOnFocus}
-            onBlur={handleBlurInputMin}
-          ></input>
+            onBlur={handleBlurInputMin} />
         </div>
         <div className="price-to">
           <p>Цена до:</p>
@@ -119,8 +104,7 @@ function Sort() {
             defaultValue="0"
             ref={inputMaxPrice}
             onFocus={handleCleanInputMaxOnFocus}
-            onBlur={handleBlurInputMax}
-          ></input>
+            onBlur={handleBlurInputMax} />
         </div>
         <button className="button btn-filter" type="submit">
           Show

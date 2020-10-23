@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import TableWrapper from './components/blocks/table-wrapper/component';
 import Modal from './components/blocks/modal/component';
-import { useSelector, useDispatch } from 'react-redux';
 import { addCar } from './store/actions';
 
 import './App.css';
@@ -10,16 +10,16 @@ function App() {
   const dispatch = useDispatch();
 
   const data = useSelector(
-    (state) => state.carsData,
-    );
-  
+    state => state.carsData,
+  );
+
   const [showModal, setShowModal] = useState(false);
 
   const handleOpen = () => {
     setShowModal(true);
   };
 
-  const handleSave = (e) => {
+  const handleSave = e => {
     e.preventDefault();
 
     const dataFromForm = [
@@ -34,18 +34,15 @@ function App() {
       },
     ];
 
-    const newData = [...data, ...dataFromForm ]
+    const newData = [...data, ...dataFromForm];
 
     dispatch(addCar(newData));
 
     setShowModal(false);
   };
 
-  
-
   const handleClose = () => {
     setShowModal(false);
-
   };
 
   return (

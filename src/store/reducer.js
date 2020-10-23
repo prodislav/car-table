@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import {
   DATA_REQUEST,
   DATA_SUCCESS,
@@ -54,19 +55,18 @@ function dataReducer(state = initialState, { type, payload }) {
         carsData: [...payload],
       };
 
-      case SORT_CAR_BY_YEAR:
+    case SORT_CAR_BY_YEAR:
       return {
         ...state,
         carsData: [...payload],
-      }; 
-    
-      case SORT_CAR_BY_PRICE:
-        return {
-          ...state,
-          carsData: [...payload],
-        }; 
+      };
 
-    
+    case SORT_CAR_BY_PRICE:
+      return {
+        ...state,
+        carsData: [...payload],
+      };
+
     default:
       return state;
   }
