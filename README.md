@@ -22,7 +22,7 @@ Please make sure the release file is unpacked under a Web-accessible directory. 
 * src/
     > * api/
           >> * service.js
-    >  * components/
+      * components/
           >>  * admin-table/
               >>> * component.jsx
               >>> * style.css
@@ -32,9 +32,9 @@ Please make sure the release file is unpacked under a Web-accessible directory. 
           >>  * user-form/
               >>> * component.jsx
               >>> * style.css
-    >  * App.css
-    >  * App.js
-    >  * index.js
+      * App.css
+      * App.js
+      * index.js
 * .gitignore
 * desktop.ini
 * package-lock.json
