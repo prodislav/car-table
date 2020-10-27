@@ -18,17 +18,17 @@ Please make sure the release file is unpacked under a Web-accessible directory. 
 Please make sure the release file is unpacked under a Web-accessible directory. You shall see the following files and directories:
 
 * public/ 
-     - index.html
+     * index.html
 * src/
-     - api/
-           + service.js
-      - components/
-           + admin-table/
-           + navBar/
-           + user-form/
-      - App.css
-      - App.js
-      - index.js
+     * api/
+           * service.js
+      * components/
+           * admin-table/
+           * navBar/
+           * user-form/
+      * App.css
+      * App.js
+      * index.js
 * .gitignore
 * desktop.ini
 * package-lock.json
