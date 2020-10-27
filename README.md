@@ -24,8 +24,14 @@ Please make sure the release file is unpacked under a Web-accessible directory. 
         * service.js
     * components/
         * admin-table/
+            * component.jsx
+            * style.css
         * navBar/
+            * component.jsx
+            * style.css
         * user-form/
+            * component.jsx
+            * style.css
     * App.css
     * App.js
     * index.js
@@ -36,14 +42,21 @@ Please make sure the release file is unpacked under a Web-accessible directory. 
 * yarn.lock
 * README.md
 
-user-form displays forms for the user with fields for entering information;
-navBar serves to switch between user form page and admin table;
-admin table displays a table with user dataю.
+
+user-form displays forms for the user with fields for entering information;  
+navBar serves to switch between user form page and admin table;  
+admin table displays a table with user data.  
 
 ### Quick start
 On command line, type in the following commands:
 
 **npm start**
+
+Runs the app in the development mode.
+Open http://localhost:3000 to view it in the browser.
+
+The page will reload if you make edits.
+You will also see any lint errors in the console.
 
 ---
 # BackEnd
