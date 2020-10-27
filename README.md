@@ -24,14 +24,8 @@ Please make sure the release file is unpacked under a Web-accessible directory. 
            * service.js
       * components/
            * admin-table/
-               * component.jsx
-               * style.css
            * navBar/
-               * component.jsx
-               * style.css
            * user-form/
-               * component.jsx
-               * style.css
       * App.css
       * App.js
       * index.js
