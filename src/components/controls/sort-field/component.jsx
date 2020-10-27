@@ -1,3 +1,4 @@
+/* eslint-disable no-return-assign */
 import React, { useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Select } from 'antd';
