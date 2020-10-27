@@ -36,6 +36,21 @@ Please make sure the release file is unpacked under a Web-accessible directory. 
 * yarn.lock
 * README.md
 
+* Звездочкой, как выше
+ -  Минусом в начале строки
+       +  Или плюсом
+     +  Или плюсом
+ -  Минусом в начале строки
+ -  Минусом в начале строки
+ -  Минусом в начале строки
+ * Звездочкой, как ниже
+ -  Минусом в начале строки
+       +  Или плюсом
+     +  Или плюсом
+ -  Минусом в начале строки
+ -  Минусом в начале строки
+ -  Минусом в начале строки
+
 
 user-form displays forms for the user with fields for entering information;
 navBar serves to switch between user form page and admin table;
