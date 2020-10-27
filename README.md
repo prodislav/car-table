@@ -20,15 +20,15 @@ Please make sure the release file is unpacked under a Web-accessible directory. 
 * public/ 
      * index.html
 * src/
-     * api/
-           * service.js
-      * components/
-           * admin-table/
+     - api/
+           <!-- * service.js -->
+      - components/
+           <!-- * admin-table/
            * navBar/
-           * user-form/
-      * App.css
-      * App.js
-      * index.js
+           * user-form/ -->
+      - App.css
+      - App.js
+      - index.js
 * .gitignore
 * desktop.ini
 * package-lock.json
