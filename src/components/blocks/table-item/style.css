@@ -1,0 +1,50 @@
+.table-item {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+}
+
+.table-item:not(:last-of-type){
+    border-bottom: 1px solid lightgrey;
+}
+
+.table-item__name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px;
+    width: 16%;
+}
+
+.table-item__name:not(:last-of-type) {
+    border-right: 1px solid lightgrey;
+}
+
+.btn-del {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    right: 3px;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    outline: none;
+    transition: all .2s;
+}
+
+.btn-del:hover {
+    cursor: pointer;
+    width: 17px;
+    height: 17px;
+    outline: none;
+    transition: all .2s;
+}
+
+.btn-del:active {
+    outline: none;
+    transition: all .2s;
+}

@@ -1,0 +1,21 @@
+.sort {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.filter {
+    display: flex;
+    margin-top: 40px;
+}
+
+.price-from,
+.price-to {
+    margin-right: 20px;
+}
+
+.button.btn-filter {
+    margin: 32px 0 0;
+    height: 30px;
+}
